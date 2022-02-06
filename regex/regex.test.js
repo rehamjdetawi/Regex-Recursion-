@@ -7,7 +7,10 @@ characters (no numbers and symbols) and it should end with capital A else return
 
 function capitalA(s){
     // Add your logic.
-    return;
+    let reg = /\d/gi;
+    let reg1 = /(A)\b/g;
+    return  reg.test(s)&&reg1.test(s);
+    
 }
 
 
@@ -16,7 +19,10 @@ which end with io (example@example.io) */
 
 function ioEmail(email){
     // Add your logic.
-    return;
+    let reg = /(@)/gi;
+    let reg2 = /(io)\b/g;
+    return reg.test(email)&&reg2.test(email); 
+    
 }
 
 /* You have a text that contain image names with their extention you need to write a function to 
@@ -29,7 +35,14 @@ required extention are jpg, jpeg and png.
 function imagesSearcher(text){
     let arr = [];
     // Add your logic.
-    return arr
+    
+    
+    let reg = /(\w)*(.png)/g;
+    let reg1 = /(\w)*(.jpg)/g;
+    let reg2 = /(\w)*(.jpeg)/g;
+        arr.push(text.match(reg),text.match(reg1),text.match(reg2));
+    return arr;
+    
 }
 
 
